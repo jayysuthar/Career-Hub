@@ -103,7 +103,7 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 
 **Track your progress** — Each day you open it, mark companies as "visited." The progress bar shows how many you've checked today. The history calendar lets you see your job-hunting consistency over time.
 
-**Stay organized** — Add notes to companies ("Applied May 22 for PM role"). Save recruiter and hiring manager contacts and map them to their companies so nothing falls through the cracks.
+**Stay organized** — Add notes to companies ("Applied May 24 for SWE role"). Save recruiter and hiring manager contacts and map them to their companies so nothing falls through the cracks.
 
 **Search & filter** — Search across company names and your notes. Filter by tags instantly.
 
