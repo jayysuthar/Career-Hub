@@ -32,7 +32,8 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 - Add any company with a name, career page URL, tag (e.g. Fintech, AI, Health), and a personal note
 - Edit or remove companies at any time
 - Drag and drop tiles to reorder companies however makes sense to you
-- Import an entire Chrome bookmarks folder in one click — if you already have a "Companies" folder bookmarked, export it as HTML and import it directly
+- Import companies from Chrome bookmarks (HTML) or from a previous backup (JSON)
+- Export all your companies and contacts as a JSON file to back up your data or transfer to another device
 
 ### Daily Visit Tracking
 
@@ -112,4 +113,6 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 
 Every time you visit Career Hub, it's a completely private session on your device. Your data doesn't sync to anyone's servers — it stays in your browser. If someone else visits Career Hub, they see a blank slate. Your data is yours alone.
 
-**⚠️ Important:** Your data is stored locally in your browser. If you clear your browser's **cookies and site data**, you will lose all your companies, contacts, visit history, and preferences. Clearing history or cache alone won't affect your data, but clearing site data will. If you want to be safe, avoid clearing cookies and site data for this domain.
+**⚠️ Important:** Your data is stored locally in your browser. If you clear your browser's **cookies and site data**, you will lose all your companies, contacts, visit history, and preferences. Clearing history or cache alone won't affect your data, but clearing site data will. 
+
+**Backup your data:** Click the **Export** button anytime to download a JSON backup of all your companies and contacts. If you accidentally clear your data, just import that JSON file back to restore everything instantly.

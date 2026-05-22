@@ -29,9 +29,13 @@
         </button>
         <button class="btn-ghost" id="import-btn">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1"/></svg>
-          Import bookmarks
+          Import bookmarks and contacts
         </button>
-        <input type="file" id="import-file" accept=".html" hidden />
+        <input type="file" id="import-file" accept=".html,.json" hidden />
+        <button class="btn-ghost" id="export-btn" title="Export all data as JSON">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><path d="M8 13v-2M5 11l3-3 3 3"/><path d="M2 2v1a1 1 0 001 1h10a1 1 0 001-1V2"/></svg>
+          Export
+        </button>
         <button class="btn-ghost" id="add-email-btn">
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M1 4l7 5 7-5"/></svg>
           Add contact
