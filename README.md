@@ -41,7 +41,7 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 ### Visit History Calendar
 - Click the clock icon in the toolbar to open the history calendar
 - See which days you were active, a running tally of total visits per month, and today's date highlighted
-- Date tracking follows EST timezone
+- Date tracking follows your local system timezone
 
 ### Contact Management
 - Add contacts (recruiters, hiring managers, engineers) and map them to a specific company

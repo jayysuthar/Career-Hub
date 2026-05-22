@@ -62,9 +62,8 @@ function saveVisits() {
 }
 
 function todayKey() {
-  // Build YYYY-MM-DD explicitly from ET date parts — avoids locale formatting quirks
+  // Build YYYY-MM-DD using user's local timezone
   const parts = new Intl.DateTimeFormat('en-US', {
-    timeZone: 'America/New_York',
     year: 'numeric', month: '2-digit', day: '2-digit'
   }).formatToParts(new Date());
   const get = t => parts.find(p => p.type === t).value;
