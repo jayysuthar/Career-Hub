@@ -1,233 +1,445 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Career Hub</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-</head>
-<body>
-
-  <!-- ── Header ── -->
-  <header class="site-header">
-    <div class="container">
-      <div class="header-left">
-        <span class="logo-mark">⌖</span>
-        <div class="title-wrap">
-          <h1 id="site-title" class="site-title" title="Click to personalize">Career Hub</h1>
-          <p class="subtitle">Your personal job hunt dashboard</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Hub</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ── Header ── -->
+    <header class="site-header">
+      <div class="container">
+        <div class="header-left">
+          <span class="logo-mark">⌖</span>
+          <div class="title-wrap">
+            <h1 id="site-title" class="site-title" title="Click to personalize">
+              Career Hub
+            </h1>
+            <p class="subtitle">Your personal job hunt dashboard</p>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button
+            class="btn-icon-sm"
+            id="theme-btn"
+            aria-label="Toggle dark mode"
+            title="Toggle dark mode"
+          >
+            <svg
+              id="theme-icon-sun"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="15"
+              height="15"
+            >
+              <circle cx="8" cy="8" r="3" />
+              <path
+                d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1 1M11.9 11.9l1 1M11.9 3.1l-1 1M3.1 11.9l1-1"
+              />
+            </svg>
+            <svg
+              id="theme-icon-moon"
+              viewBox="0 0 16 16"
+              width="15"
+              height="15"
+              hidden
+            >
+              <path
+                fill="currentColor"
+                d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+              />
+            </svg>
+          </button>
+          <button class="btn-ghost" id="import-btn">
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="13"
+              height="13"
+            >
+              <path d="M8 2v8M5 7l3 3 3-3" />
+              <path d="M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1" />
+            </svg>
+            Import bookmarks and contacts
+          </button>
+          <input type="file" id="import-file" accept=".html,.json" hidden />
+          <button
+            class="btn-ghost"
+            id="export-btn"
+            title="Export all data as JSON"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="13"
+              height="13"
+            >
+              <path d="M8 13v-2M5 11l3-3 3 3" />
+              <path d="M2 2v1a1 1 0 001 1h10a1 1 0 001-1V2" />
+            </svg>
+            Export
+          </button>
+          <button class="btn-ghost" id="add-email-btn">
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="13"
+              height="13"
+            >
+              <rect x="1" y="3" width="14" height="10" rx="1.5" />
+              <path d="M1 4l7 5 7-5" />
+            </svg>
+            Add contact
+          </button>
+          <a
+            class="btn-ghost btn-market"
+            href="https://karpathy.ai/jobs/"
+            target="_blank"
+            rel="noopener"
+            title="US Job Market Visualizer"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="13"
+              height="13"
+            >
+              <polyline points="1,12 5,7 8,10 11,5 15,2" />
+              <polyline points="11,2 15,2 15,6" />
+            </svg>
+            Market pulse
+          </a>
+          <button
+            class="btn-ghost btn-linkedin"
+            id="linkedin-btn"
+            title="Open your LinkedIn profile"
+          >
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              />
+            </svg>
+          </button>
+          <button class="btn-primary" id="add-btn">
+            <span class="btn-icon">+</span> Add company
+          </button>
         </div>
       </div>
-      <div class="header-actions">
-        <button class="btn-icon-sm" id="theme-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
-          <svg id="theme-icon-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="15" height="15"><circle cx="8" cy="8" r="3"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3.1 3.1l1 1M11.9 11.9l1 1M11.9 3.1l-1 1M3.1 11.9l1-1"/></svg>
-          <svg id="theme-icon-moon" viewBox="0 0 16 16" width="15" height="15" hidden><path fill="currentColor" d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/></svg>
-        </button>
-        <button class="btn-ghost" id="import-btn">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><path d="M8 2v8M5 7l3 3 3-3"/><path d="M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1"/></svg>
-          Import bookmarks and contacts
-        </button>
-        <input type="file" id="import-file" accept=".html,.json" hidden />
-        <button class="btn-ghost" id="export-btn" title="Export all data as JSON">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><path d="M8 13v-2M5 11l3-3 3 3"/><path d="M2 2v1a1 1 0 001 1h10a1 1 0 001-1V2"/></svg>
-          Export
-        </button>
-        <button class="btn-ghost" id="add-email-btn">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><rect x="1" y="3" width="14" height="10" rx="1.5"/><path d="M1 4l7 5 7-5"/></svg>
-          Add contact
-        </button>
-        <a class="btn-ghost btn-market" href="https://karpathy.ai/jobs/" target="_blank" rel="noopener" title="US Job Market Visualizer">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><polyline points="1,12 5,7 8,10 11,5 15,2"/><polyline points="11,2 15,2 15,6"/></svg>
-          Market pulse
-        </a>
-        <button class="btn-ghost btn-linkedin" id="linkedin-btn" title="Open your LinkedIn profile">
-          <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor"><path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/></svg>
-          LinkedIn
-        </button>
-        <button class="btn-primary" id="add-btn">
-          <span class="btn-icon">+</span> Add company
-        </button>
+    </header>
+
+    <!-- ── Toolbar ── -->
+    <div class="toolbar">
+      <div class="container">
+        <div class="search-wrap">
+          <svg
+            class="search-icon"
+            viewBox="0 0 20 20"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+          >
+            <circle cx="8.5" cy="8.5" r="5.5" />
+            <path d="M15 15l-3-3" />
+          </svg>
+          <input
+            type="text"
+            id="search"
+            placeholder="Search companies or tags…"
+            autocomplete="off"
+          />
+        </div>
+        <div class="filter-tags" id="filter-tags">
+          <button class="tag-pill active" data-tag="">All</button>
+        </div>
+        <div class="dp-wrap" id="dp-wrap">
+          <div class="dp-stat">
+            <span class="dp-label">Today</span>
+            <span class="dp-count" id="dp-count">0 / 0</span>
+          </div>
+          <div class="dp-bar-track">
+            <div class="dp-bar-fill" id="dp-bar-fill"></div>
+          </div>
+          <button
+            class="dp-history-btn"
+            id="history-btn"
+            title="View visit history"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="14"
+              height="14"
+            >
+              <circle cx="8" cy="8" r="6" />
+              <path d="M8 5v3.5l2.5 1.5" />
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
-  </header>
 
-  <!-- ── Toolbar ── -->
-  <div class="toolbar">
-    <div class="container">
-      <div class="search-wrap">
-        <svg class="search-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
-          <circle cx="8.5" cy="8.5" r="5.5"/><path d="M15 15l-3-3"/>
-        </svg>
-        <input type="text" id="search" placeholder="Search companies or tags…" autocomplete="off" />
+    <!-- ── Main Grid ── -->
+    <main class="container">
+      <p class="results-count" id="count"></p>
+      <div class="grid" id="grid"></div>
+      <div class="empty-state" id="empty" hidden>
+        <div class="empty-icon">🏢</div>
+        <p>No companies found</p>
+        <span>Add one with the button above</span>
       </div>
-      <div class="filter-tags" id="filter-tags">
-        <button class="tag-pill active" data-tag="">All</button>
-      </div>
-      <div class="dp-wrap" id="dp-wrap">
-        <div class="dp-stat">
-          <span class="dp-label">Today</span>
-          <span class="dp-count" id="dp-count">0 / 0</span>
+    </main>
+
+    <!-- ── Modal ── -->
+    <div class="modal-overlay" id="modal-overlay" hidden>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-title"
+      >
+        <div class="modal-header">
+          <h2 id="modal-title">Add company</h2>
+          <button class="modal-close" id="modal-close" aria-label="Close">
+            ✕
+          </button>
         </div>
-        <div class="dp-bar-track"><div class="dp-bar-fill" id="dp-bar-fill"></div></div>
-        <button class="dp-history-btn" id="history-btn" title="View visit history">
-          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" width="14" height="14"><circle cx="8" cy="8" r="6"/><path d="M8 5v3.5l2.5 1.5"/></svg>
-        </button>
+        <div class="modal-body">
+          <input type="hidden" id="edit-id" value="" />
+          <div class="field">
+            <label for="f-name">Company name <span class="req">*</span></label>
+            <input type="text" id="f-name" placeholder="e.g. Stripe" />
+            <p class="field-error" id="err-name" hidden>
+              Please enter a company name
+            </p>
+          </div>
+          <div class="field">
+            <label for="f-url"
+              >Career page URL <span class="req">*</span></label
+            >
+            <input
+              type="url"
+              id="f-url"
+              placeholder="https://stripe.com/jobs?location=remote"
+            />
+            <p class="field-hint">
+              Paste the full URL including any filters you've set
+            </p>
+            <p class="field-error" id="err-url" hidden>
+              Please enter a valid URL
+            </p>
+          </div>
+          <div class="field">
+            <label for="f-tag">Tag</label>
+            <input
+              type="text"
+              id="f-tag"
+              placeholder="e.g. Fintech, AI, Health"
+              list="tag-suggestions"
+            />
+            <datalist id="tag-suggestions"></datalist>
+          </div>
+          <div class="field">
+            <label for="f-note">Note (optional)</label>
+            <input
+              type="text"
+              id="f-note"
+              placeholder="e.g. Applied to 3 roles, check weekly"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-ghost" id="modal-cancel">Cancel</button>
+          <button class="btn-primary" id="modal-save">Save</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ── Main Grid ── -->
-  <main class="container">
-    <p class="results-count" id="count"></p>
-    <div class="grid" id="grid"></div>
-    <div class="empty-state" id="empty" hidden>
-      <div class="empty-icon">🏢</div>
-      <p>No companies found</p>
-      <span>Add one with the button above</span>
-    </div>
-  </main>
-
-  <!-- ── Modal ── -->
-  <div class="modal-overlay" id="modal-overlay" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <div class="modal-header">
-        <h2 id="modal-title">Add company</h2>
-        <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" id="edit-id" value="" />
-        <div class="field">
-          <label for="f-name">Company name <span class="req">*</span></label>
-          <input type="text" id="f-name" placeholder="e.g. Stripe" />
-          <p class="field-error" id="err-name" hidden>Please enter a company name</p>
+    <!-- ── Delete confirm ── -->
+    <div class="modal-overlay" id="confirm-overlay" hidden>
+      <div class="modal modal--sm" role="dialog" aria-modal="true">
+        <div class="modal-header">
+          <h2>Remove company?</h2>
+          <button class="modal-close" id="confirm-close" aria-label="Close">
+            ✕
+          </button>
         </div>
-        <div class="field">
-          <label for="f-url">Career page URL <span class="req">*</span></label>
-          <input type="url" id="f-url" placeholder="https://stripe.com/jobs?location=remote" />
-          <p class="field-hint">Paste the full URL including any filters you've set</p>
-          <p class="field-error" id="err-url" hidden>Please enter a valid URL</p>
+        <div class="modal-body">
+          <p style="color: var(--text-secondary); font-size: 14px">
+            <strong id="confirm-name"></strong> will be removed from your list.
+          </p>
         </div>
-        <div class="field">
-          <label for="f-tag">Tag</label>
-          <input type="text" id="f-tag" placeholder="e.g. Fintech, AI, Health" list="tag-suggestions" />
-          <datalist id="tag-suggestions"></datalist>
+        <div class="modal-footer">
+          <button class="btn-ghost" id="confirm-cancel">Cancel</button>
+          <button class="btn-danger" id="confirm-ok">Remove</button>
         </div>
-        <div class="field">
-          <label for="f-note">Note (optional)</label>
-          <input type="text" id="f-note" placeholder="e.g. Applied to 3 roles, check weekly" />
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-ghost" id="modal-cancel">Cancel</button>
-        <button class="btn-primary" id="modal-save">Save</button>
       </div>
     </div>
-  </div>
 
-  <!-- ── Delete confirm ── -->
-  <div class="modal-overlay" id="confirm-overlay" hidden>
-    <div class="modal modal--sm" role="dialog" aria-modal="true">
-      <div class="modal-header">
-        <h2>Remove company?</h2>
-        <button class="modal-close" id="confirm-close" aria-label="Close">✕</button>
-      </div>
-      <div class="modal-body">
-        <p style="color:var(--text-secondary);font-size:14px;">
-          <strong id="confirm-name"></strong> will be removed from your list.
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-ghost" id="confirm-cancel">Cancel</button>
-        <button class="btn-danger" id="confirm-ok">Remove</button>
+    <!-- ── Add email modal ── -->
+    <div class="modal-overlay" id="email-modal-overlay" hidden>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="email-modal-title"
+      >
+        <div class="modal-header">
+          <h2 id="email-modal-title">Add contact</h2>
+          <button class="modal-close" id="email-modal-close" aria-label="Close">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <input type="hidden" id="ef-email-id" value="" />
+          <div class="field">
+            <label for="ef-company">Company <span class="req">*</span></label>
+            <select id="ef-company" class="field-select"></select>
+            <p class="field-error" id="err-ef-company" hidden>
+              Please select a company
+            </p>
+          </div>
+          <div class="field">
+            <label for="ef-name">Contact name</label>
+            <input type="text" id="ef-name" placeholder="e.g. John Smith" />
+          </div>
+          <div class="field">
+            <label for="ef-email"
+              >Email address <span class="req">*</span></label
+            >
+            <input
+              type="email"
+              id="ef-email"
+              placeholder="e.g. john@apple.com"
+            />
+            <p class="field-error" id="err-ef-email" hidden>
+              Please enter a valid email
+            </p>
+          </div>
+          <div class="field">
+            <label for="ef-role">Position / Role</label>
+            <input
+              type="text"
+              id="ef-role"
+              placeholder="e.g. Engineering Manager, Recruiter"
+            />
+          </div>
+          <div class="field">
+            <label for="ef-phone">Phone (optional)</label>
+            <input
+              type="tel"
+              id="ef-phone"
+              placeholder="e.g. 4155550000"
+              maxlength="10"
+            />
+            <p class="field-error" id="err-ef-phone" hidden>
+              Phone number must be exactly 10 digits
+            </p>
+          </div>
+          <div class="field">
+            <label for="ef-linkedin">LinkedIn URL (optional)</label>
+            <input
+              type="url"
+              id="ef-linkedin"
+              placeholder="https://linkedin.com/in/username"
+            />
+          </div>
+          <div class="field">
+            <label for="ef-note">Note (optional)</label>
+            <input
+              type="text"
+              id="ef-note"
+              placeholder="e.g. Reached out on May 17"
+            />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-ghost" id="email-modal-cancel">Cancel</button>
+          <button class="btn-primary" id="email-modal-save">Add contact</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <!-- ── Add email modal ── -->
-  <div class="modal-overlay" id="email-modal-overlay" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="email-modal-title">
-      <div class="modal-header">
-        <h2 id="email-modal-title">Add contact</h2>
-        <button class="modal-close" id="email-modal-close" aria-label="Close">✕</button>
-      </div>
-      <div class="modal-body">
-        <input type="hidden" id="ef-email-id" value="" />
-        <div class="field">
-          <label for="ef-company">Company <span class="req">*</span></label>
-          <select id="ef-company" class="field-select"></select>
-          <p class="field-error" id="err-ef-company" hidden>Please select a company</p>
+    <!-- ── History modal ── -->
+    <div class="modal-overlay" id="history-overlay" hidden>
+      <div
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="history-title"
+      >
+        <div class="modal-header">
+          <h2 id="history-title">Visit history</h2>
+          <button class="modal-close" id="history-close" aria-label="Close">
+            ✕
+          </button>
         </div>
-        <div class="field">
-          <label for="ef-name">Contact name</label>
-          <input type="text" id="ef-name" placeholder="e.g. John Smith" />
-        </div>
-        <div class="field">
-          <label for="ef-email">Email address <span class="req">*</span></label>
-          <input type="email" id="ef-email" placeholder="e.g. john@apple.com" />
-          <p class="field-error" id="err-ef-email" hidden>Please enter a valid email</p>
-        </div>
-        <div class="field">
-          <label for="ef-role">Position / Role</label>
-          <input type="text" id="ef-role" placeholder="e.g. Engineering Manager, Recruiter" />
-        </div>
-        <div class="field">
-          <label for="ef-phone">Phone (optional)</label>
-          <input type="tel" id="ef-phone" placeholder="e.g. 4155550000" maxlength="10" />
-          <p class="field-error" id="err-ef-phone" hidden>Phone number must be exactly 10 digits</p>
-        </div>
-        <div class="field">
-          <label for="ef-linkedin">LinkedIn URL (optional)</label>
-          <input type="url" id="ef-linkedin" placeholder="https://linkedin.com/in/username" />
-        </div>
-        <div class="field">
-          <label for="ef-note">Note (optional)</label>
-          <input type="text" id="ef-note" placeholder="e.g. Reached out on May 17" />
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button class="btn-ghost" id="email-modal-cancel">Cancel</button>
-        <button class="btn-primary" id="email-modal-save">Add contact</button>
+        <div class="modal-body" id="history-body"></div>
       </div>
     </div>
-  </div>
 
-  <!-- ── History modal ── -->
-  <div class="modal-overlay" id="history-overlay" hidden>
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="history-title">
-      <div class="modal-header">
-        <h2 id="history-title">Visit history</h2>
-        <button class="modal-close" id="history-close" aria-label="Close">✕</button>
-      </div>
-      <div class="modal-body" id="history-body"></div>
-    </div>
-  </div>
-
-  <!-- ── LinkedIn URL modal ── -->
-  <div class="modal-overlay" id="linkedin-modal-overlay" hidden>
-    <div class="modal modal--sm" role="dialog" aria-modal="true" aria-labelledby="linkedin-modal-title">
-      <div class="modal-header">
-        <h2 id="linkedin-modal-title">Your LinkedIn URL</h2>
-        <button class="modal-close" id="linkedin-modal-close" aria-label="Close">✕</button>
-      </div>
-      <div class="modal-body">
-        <div class="field">
-          <label for="linkedin-url-input">Profile URL</label>
-          <input type="url" id="linkedin-url-input" placeholder="https://linkedin.com/in/your-username" />
-          <p class="field-hint">Saved locally in your browser — only you can see it.</p>
-          <p class="field-error" id="err-linkedin-url" hidden>Please enter a valid LinkedIn URL</p>
+    <!-- ── LinkedIn URL modal ── -->
+    <div class="modal-overlay" id="linkedin-modal-overlay" hidden>
+      <div
+        class="modal modal--sm"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="linkedin-modal-title"
+      >
+        <div class="modal-header">
+          <h2 id="linkedin-modal-title">Your LinkedIn URL</h2>
+          <button
+            class="modal-close"
+            id="linkedin-modal-close"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="field">
+            <label for="linkedin-url-input">Profile URL</label>
+            <input
+              type="url"
+              id="linkedin-url-input"
+              placeholder="https://linkedin.com/in/your-username"
+            />
+            <p class="field-hint">
+              Saved locally in your browser — only you can see it.
+            </p>
+            <p class="field-error" id="err-linkedin-url" hidden>
+              Please enter a valid LinkedIn URL
+            </p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-ghost" id="linkedin-modal-cancel">Cancel</button>
+          <button class="btn-primary" id="linkedin-modal-save">
+            Save &amp; Open
+          </button>
         </div>
       </div>
-      <div class="modal-footer">
-        <button class="btn-ghost" id="linkedin-modal-cancel">Cancel</button>
-        <button class="btn-primary" id="linkedin-modal-save">Save &amp; Open</button>
-      </div>
     </div>
-  </div>
 
-  <script src="js/app.js"></script>
-</body>
+    <script src="js/app.js"></script>
+  </body>
 </html>
