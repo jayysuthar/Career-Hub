@@ -1,18 +1,26 @@
 # Career Hub
 
-A personal job-hunt dashboard that lives entirely in your browser — no backend, no account, no build step. Track every company you're eyeing, log daily visits, manage contacts, and stay organized without switching between 10 different tabs.
+A personal job-hunt dashboard that lives entirely in your browser. Track companies, log daily visits, manage contacts, and save your own customized career page bookmarks—so you never have to reapply filters or lose your place again.
 
 ---
 
-## Why Career Hub?
+## What is Career Hub?
 
-Job hunting is messy. You have a mental list of 30 companies to check, you forget which ones you visited yesterday, you lose that recruiter's email, and you can't remember why you tagged a company as "interesting" three weeks ago.
+Career Hub is your personal, private hub for organizing your job search. Instead of bookmarking career pages and losing track of them, or switching between 10 browser tabs, you save companies in one place with your own notes, tags, and contacts.
 
-Career Hub fixes that:
+**The Core Idea: Your Own Customized Bookmarks**
 
-- Every company you care about is in one place with its career page URL, tags, and your own notes
-- You see at a glance which pages you've visited today and how consistent your habit is over time
-- Contacts (recruiters, hiring managers) are mapped directly to companies so nothing slips through
+Let's say you find Google's careers page and filter for "United States" jobs in "Engineering." You bookmark that exact link with your filters applied. Next time you visit Career Hub, you click it and boom—your filters are already there. No need to reapply them. Every user gets their own customized bookmarks with all their filters, searches, and preferences baked in. That's what makes this different.
+
+---
+
+## Why Use Career Hub?
+
+Job hunting is chaotic. You have 30+ companies to check, you can't remember which ones you visited this week, you lose recruiter emails, and you forget why you tagged a company as "interesting." Career Hub organizes all of it in one place:
+
+- Save company career pages with your customized filters and preferences built in
+- See at a glance which companies you visited today and track your job-hunting consistency over time
+- Map contacts (recruiters, hiring managers) directly to companies so nothing slips through the cracks
 - Everything is private — your data never leaves your browser
 
 ---
@@ -71,95 +79,26 @@ Career Hub fixes that:
 - Quick way to check macro hiring trends without leaving your workflow
 
 ### Privacy First
-- Zero backend — all data lives in `localStorage` in your own browser
+- Zero backend — all data lives in your browser only
 - Nothing is ever sent to any server
-- If you share the GitHub Pages URL with a friend, they get a completely blank dashboard — your data is yours only
+- Your data is 100% yours and never shared
 
 ---
 
-## Setup
+## How to Use It
 
-### Option 1 — Run locally (instant, no setup)
+**Get started** — Add companies manually or import your existing bookmarks. Tag them by industry, role type, or priority.
 
-```
-Open index.html in any modern browser. That's it.
-```
+**Save customized links** — When you find a career page with filters you like (country, job type, experience level, etc.), bookmark that exact URL in Career Hub. Your filters stay saved forever.
 
-### Option 2 — Host on GitHub Pages (access from anywhere)
+**Track your progress** — Each day you open it, mark companies as "visited." The progress bar shows how many you've checked today. The history calendar lets you see your job-hunting consistency over time.
 
-1. Create a new GitHub repository (e.g. `career-hub`)
-2. Push this project to it:
+**Stay organized** — Add notes to companies ("Applied May 22 for PM role"). Save recruiter and hiring manager contacts and map them to their companies so nothing falls through the cracks.
 
-```bash
-cd career-hub
-git init
-git add .
-git commit -m "initial commit"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/career-hub.git
-git push -u origin main
-```
-
-3. Go to your repo → **Settings → Pages**
-4. Under **Source**, choose `main` branch and `/ (root)` folder → click **Save**
-5. Your dashboard will be live at:
-
-```
-https://YOUR_USERNAME.github.io/career-hub/
-```
-
-Once hosted, you can access it from any device on any browser. Each browser/device has its own separate `localStorage`, so your data on your laptop won't appear on your phone — and that's fine for a personal tool.
+**Search & filter** — Search across company names and your notes. Filter by tags instantly.
 
 ---
 
-## How to use it effectively
+## Data Privacy
 
-**Day 1** — Import your existing bookmarks or add 20–30 companies you want to follow. Tag them by industry or priority.
-
-**Every day** — Open Career Hub first thing. Work through your list, open career pages that look promising. The progress bar tells you how many you've checked today.
-
-**When you spot a role** — Add a note to the company tile ("Applied May 22 — PM role, hybrid NYC"). Update it as things progress.
-
-**When you make a contact** — Add them immediately. Recruiters especially — you want their name, email, and role locked in before you forget.
-
-**Weekly** — Open the history calendar. If you see gaps, you know your consistency slipped. No guilt, just signal.
-
----
-
-## Project structure
-
-```
-career-hub/
-├── index.html        — markup and all modals
-├── favicon.svg       — browser tab icon
-├── css/
-│   └── style.css     — all styles, light + dark mode
-├── js/
-│   └── app.js        — all logic, localStorage, rendering
-└── README.md
-```
-
----
-
-## Keyboard shortcuts
-
-| Shortcut | Action |
-|---|---|
-| `Ctrl / Cmd + K` | Focus the search bar |
-| `Esc` | Close any open modal |
-| Right-click LinkedIn button | Edit your saved LinkedIn URL |
-
----
-
-## Data & localStorage keys
-
-| Key | What it stores |
-|---|---|
-| `career_hub_companies` | Your company list (name, URL, tag, note, order) |
-| `career_hub_visits` | Daily visit log keyed by date |
-| `career_hub_emails` | Contacts mapped to companies |
-| `career_hub_theme` | Your light/dark preference |
-| `career_hub_linkedin` | Your LinkedIn profile URL |
-| `career_hub_username` | Your name for the personalized title |
-
-To reset everything, open DevTools → Application → Local Storage → delete all `career_hub_*` keys.
+Every time you visit Career Hub, it's a completely private session on your device. Your data doesn't sync to anyone's servers — it stays in your browser. If someone else visits Career Hub, they see a blank slate. Your data is yours alone.
