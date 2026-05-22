@@ -342,8 +342,99 @@ function toggleEmailPanel(companyId) {
 }
 
 function seedDefaults() {
-  companies = [];
+  // Create 3 sample companies
+  const company1Id = uid();
+  const company2Id = uid();
+  const company3Id = uid();
+
+  companies = [
+    {
+      id: company1Id,
+      name: 'Company 1',
+      url: 'https://company1.com/careers',
+      tag: 'Technology',
+      note: 'Great culture and tech stack. Check their engineering blog.',
+      palette: paletteFor('Company 1')
+    },
+    {
+      id: company2Id,
+      name: 'Company 2',
+      url: 'https://company2.com/careers',
+      tag: 'Fintech',
+      note: 'Fast-growing startup in the fintech space. Interesting mission.',
+      palette: paletteFor('Company 2')
+    },
+    {
+      id: company3Id,
+      name: 'Company 3',
+      url: 'https://company3.com/careers',
+      tag: 'AI',
+      note: 'Working on cutting-edge AI models. Very competitive.',
+      palette: paletteFor('Company 3')
+    }
+  ];
+
+  // Create 5 sample contacts (3 for Company 1, 2 for Company 2)
+  emails = [
+    {
+      id: uid(),
+      companyId: company1Id,
+      name: 'Sarah Johnson',
+      email: 'sarah.johnson@company1.com',
+      role: 'Senior Recruiter',
+      phone: '5551234567',
+      linkedin: 'https://linkedin.com/in/sarah-johnson',
+      note: 'Recruiting for the backend team'
+    },
+    {
+      id: uid(),
+      companyId: company1Id,
+      name: 'Mike Chen',
+      email: 'mike.chen@company1.com',
+      role: 'Engineering Manager',
+      phone: '5559876543',
+      linkedin: 'https://linkedin.com/in/mike-chen',
+      note: 'Met at tech conference. Interested in discussing roles'
+    },
+    {
+      id: uid(),
+      companyId: company1Id,
+      name: 'Emily Rodriguez',
+      email: 'emily.rodriguez@company1.com',
+      role: 'Hiring Manager',
+      phone: '5555554444',
+      linkedin: 'https://linkedin.com/in/emily-rodriguez',
+      note: 'Focus on frontend and full-stack positions'
+    },
+    {
+      id: uid(),
+      companyId: company2Id,
+      name: 'James Wilson',
+      email: 'james.wilson@company2.com',
+      role: 'Head of Talent',
+      phone: '5551112222',
+      linkedin: 'https://linkedin.com/in/james-wilson',
+      note: 'Handles all recruiting. Very responsive.'
+    },
+    {
+      id: uid(),
+      companyId: company2Id,
+      name: 'Lisa Park',
+      email: 'lisa.park@company2.com',
+      role: 'Product Manager',
+      phone: '5553334444',
+      linkedin: 'https://linkedin.com/in/lisa-park',
+      note: 'Interested in product-focused engineers'
+    }
+  ];
+
   save();
+  saveEmails();
+
+  // Set a default username (optional - shows "Career Hub" until user enters their name)
+  if (!localStorage.getItem(NAME_KEY)) {
+    localStorage.setItem(NAME_KEY, 'Your Name');
+  }
 }
 
 /* ── Helpers ── */
