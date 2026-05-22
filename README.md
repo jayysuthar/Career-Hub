@@ -28,22 +28,25 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 ## Features
 
 ### Company Tracking
+
 - Add any company with a name, career page URL, tag (e.g. Fintech, AI, Health), and a personal note
 - Edit or remove companies at any time
 - Drag and drop tiles to reorder companies however makes sense to you
 - Import an entire Chrome bookmarks folder in one click — if you already have a "Companies" folder bookmarked, export it as HTML and import it directly
 
 ### Daily Visit Tracking
+
 - Click "Open career page" on any tile to open it in a new tab — the visit is recorded automatically
 - A progress bar in the toolbar shows how many companies you've visited today vs. your total list (e.g. 12 / 47)
 - If you accidentally mark a visit, click the green "Visited" chip on the tile to undo it
 
 ### Visit History Calendar
+
 - Click the clock icon in the toolbar to open the history calendar
 - See which days you were active, a running tally of total visits per month, and today's date highlighted
-- Date tracking follows your local system timezone
 
 ### Contact Management
+
 - Add contacts (recruiters, hiring managers, engineers) and map them to a specific company
 - Store name, email, phone (10-digit validation), LinkedIn URL, role/position, and a note per contact
 - Click "Contacts" on any company tile to expand a full-width contact table below it
@@ -52,16 +55,19 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 - Contacts are sorted alphabetically by name within each company
 
 ### Search & Filter
+
 - Search across company names, tags, and notes simultaneously
 - Filter by tag with one click — tag pills appear automatically as you add companies
 - Search and filter work together
 
 ### Dark / Light Mode
+
 - Toggle between light and dark mode with the sun/moon button in the header
 - Your preference is saved and restored on next visit
 - Works cleanly across all UI elements including buttons, cards, and modals
 
 ### Personalized Title
+
 - Click the "Career Hub" title in the header to type your name
 - The title updates instantly to "Jay's Career Hub" (or whoever's name you enter)
 - The browser tab title updates too
@@ -69,16 +75,19 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 - Stored locally — each person who uses their own hosted copy sets their own name
 
 ### LinkedIn Quick Access
+
 - Add your LinkedIn profile URL once — stored locally in your browser
 - Click the LinkedIn button anytime to jump directly to your profile
 - Right-click the button to update the URL
 - Anyone hosting their own copy sets their own URL — it's never shared
 
 ### US Job Market Pulse
+
 - The "Market pulse" button in the header links to a live US job market visualizer
 - Quick way to check macro hiring trends without leaving your workflow
 
 ### Privacy First
+
 - Zero backend — all data lives in your browser only
 - Nothing is ever sent to any server
 - Your data is 100% yours and never shared
@@ -102,3 +111,5 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 ## Data Privacy
 
 Every time you visit Career Hub, it's a completely private session on your device. Your data doesn't sync to anyone's servers — it stays in your browser. If someone else visits Career Hub, they see a blank slate. Your data is yours alone.
+
+**⚠️ Important:** Your data is stored locally in your browser. If you clear your browser's **cookies and site data**, you will lose all your companies, contacts, visit history, and preferences. Clearing history or cache alone won't affect your data, but clearing site data will. If you want to be safe, avoid clearing cookies and site data for this domain.
