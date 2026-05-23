@@ -1824,3 +1824,8 @@ main.container {
 .footer-link:hover {
   color: var(--text);
 }
+.footer-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
