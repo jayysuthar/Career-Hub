@@ -61,12 +61,6 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 - Filter by tag with one click — tag pills appear automatically as you add companies
 - Search and filter work together
 
-### Dark / Light Mode
-
-- Toggle between light and dark mode with the sun/moon button in the header
-- Your preference is saved and restored on next visit
-- Works cleanly across all UI elements including buttons, cards, and modals
-
 ### Personalized Title
 
 - Click the "Career Hub" title in the header to type your name
@@ -113,6 +107,6 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 
 Every time you visit Career Hub, it's a completely private session on your device. Your data doesn't sync to anyone's servers — it stays in your browser. If someone else visits Career Hub, they see a blank slate. Your data is yours alone.
 
-**⚠️ Important:** Your data is stored locally in your browser. If you clear your browser's **cookies and site data**, you will lose all your companies, contacts, visit history, and preferences. Clearing history or cache alone won't affect your data, but clearing site data will. 
+**⚠️ Important:** Your data is stored locally in your browser. If you clear your browser's **cookies and site data**, you will lose all your companies, contacts, visit history, and preferences. Clearing history or cache alone won't affect your data, but clearing site data will.
 
 **Backup your data:** Click the **Export** button anytime to download a JSON backup of all your companies and contacts. If you accidentally clear your data, just import that JSON file back to restore everything instantly.

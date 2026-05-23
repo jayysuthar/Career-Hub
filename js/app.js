@@ -975,7 +975,7 @@ function importFromJSON(jsonText) {
           url: normalizeUrl(comp.url),
           tag: comp.tag || "",
           note: comp.note || "",
-          palette: paletteFor(comp.name)
+          palette: paletteFor(comp.name),
         });
         importedCompanies++;
       }
@@ -987,7 +987,7 @@ function importFromJSON(jsonText) {
         if (!contact.email || !contact.name) continue;
         // Map contact to matching company by URL if possible
         const matchingCompany = companies.find(
-          (c) => c.name === contact.companyName || c.id === contact.companyId
+          (c) => c.name === contact.companyName || c.id === contact.companyId,
         );
         if (!matchingCompany) continue;
         if (emails.some((e) => e.email === contact.email)) {
@@ -1002,7 +1002,7 @@ function importFromJSON(jsonText) {
           role: contact.role || "",
           phone: contact.phone || "",
           linkedin: contact.linkedin || "",
-          note: contact.note || ""
+          note: contact.note || "",
         });
         importedContacts++;
       }
@@ -1018,7 +1018,7 @@ function importFromJSON(jsonText) {
       importedCompanies,
       skippedCompanies,
       importedContacts,
-      skippedContacts
+      skippedContacts,
     };
   } catch (err) {
     return { error: "Invalid JSON file format." };
@@ -1032,7 +1032,7 @@ function exportAllData() {
       name: c.name,
       url: c.url,
       tag: c.tag,
-      note: c.note
+      note: c.note,
     })),
     contacts: emails.map((e) => {
       const company = companies.find((c) => c.id === e.companyId);
@@ -1043,9 +1043,9 @@ function exportAllData() {
         phone: e.phone,
         linkedin: e.linkedin,
         note: e.note,
-        companyName: company?.name || ""
+        companyName: company?.name || "",
       };
-    })
+    }),
   };
 
   const jsonString = JSON.stringify(data, null, 2);
@@ -1137,21 +1137,28 @@ document.getElementById("import-file").addEventListener("change", (e) => {
     } else {
       result = importFromBookmarkHTML(ev.target.result);
     }
-    
+
     if (result.error) {
       showImportToast(result.error, true);
     } else if (file.name.endsWith(".json")) {
       const messages = [];
       if (result.importedCompanies > 0) {
-        messages.push(`${result.importedCompanies} ${result.importedCompanies === 1 ? "company" : "companies"}`);
+        messages.push(
+          `${result.importedCompanies} ${result.importedCompanies === 1 ? "company" : "companies"}`,
+        );
       }
       if (result.importedContacts > 0) {
-        messages.push(`${result.importedContacts} ${result.importedContacts === 1 ? "contact" : "contacts"}`);
+        messages.push(
+          `${result.importedContacts} ${result.importedContacts === 1 ? "contact" : "contacts"}`,
+        );
       }
       const main = messages.join(" · ");
       const skipped = result.skippedCompanies + result.skippedContacts;
       const skipMsg = skipped > 0 ? ` · ${skipped} already existed` : "";
-      showImportToast(main ? `Imported ${main}${skipMsg}` : "No new items to import", !main);
+      showImportToast(
+        main ? `Imported ${main}${skipMsg}` : "No new items to import",
+        !main,
+      );
     } else {
       showImportToast(
         `Imported ${result.imported} ${result.imported === 1 ? "company" : "companies"}` +
@@ -1188,27 +1195,6 @@ document.addEventListener("keydown", (e) => {
     e.preventDefault();
     document.getElementById("search").focus();
   }
-});
-
-/* ── Theme ── */
-function applyTheme(dark) {
-  document.documentElement.dataset.theme = dark ? "dark" : "light";
-  document.getElementById("theme-icon-sun").toggleAttribute("hidden", dark);
-  document.getElementById("theme-icon-moon").toggleAttribute("hidden", !dark);
-}
-
-function initTheme() {
-  const saved = localStorage.getItem("career_hub_theme");
-  const prefersDark = saved
-    ? saved === "dark"
-    : window.matchMedia("(prefers-color-scheme: dark)").matches;
-  applyTheme(prefersDark);
-}
-
-document.getElementById("theme-btn").addEventListener("click", () => {
-  const dark = document.documentElement.dataset.theme !== "dark";
-  applyTheme(dark);
-  localStorage.setItem("career_hub_theme", dark ? "dark" : "light");
 });
 
 /* ── LinkedIn ── */
@@ -1325,7 +1311,6 @@ function syncToolbarTop() {
 window.addEventListener("resize", syncToolbarTop);
 
 /* ── Boot ── */
-initTheme();
 applyUsername();
 syncToolbarTop();
 loadVisits();
