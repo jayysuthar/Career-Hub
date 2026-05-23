@@ -1008,6 +1008,16 @@ function importFromJSON(jsonText) {
       }
     }
 
+    // Import user name if present
+    if (data.userName && typeof data.userName === "string") {
+      localStorage.setItem(NAME_KEY, data.userName);
+    }
+
+    // Import LinkedIn URL if present
+    if (data.linkedInUrl && typeof data.linkedInUrl === "string") {
+      localStorage.setItem(LINKEDIN_KEY, data.linkedInUrl);
+    }
+
     if (importedCompanies > 0 || importedContacts > 0) {
       save();
       saveEmails();
@@ -1028,6 +1038,8 @@ function importFromJSON(jsonText) {
 function exportAllData() {
   const data = {
     exportDate: new Date().toISOString(),
+    userName: localStorage.getItem(NAME_KEY) || "",
+    linkedInUrl: localStorage.getItem(LINKEDIN_KEY) || "",
     companies: companies.map((c) => ({
       name: c.name,
       url: c.url,
