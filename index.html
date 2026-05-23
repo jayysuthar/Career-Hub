@@ -40,6 +40,24 @@
           </svg>
         </button>
         <div class="header-actions">
+          <button
+            class="btn-ghost"
+            id="guide-btn"
+            title="How to use Career Hub"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              width="13"
+              height="13"
+            >
+              <circle cx="8" cy="8" r="7" />
+              <path d="M8 5v4M8 12h.01" />
+            </svg>
+            How to use
+          </button>
           <button class="btn-ghost" id="import-btn">
             <svg
               viewBox="0 0 16 16"
@@ -52,7 +70,7 @@
               <path d="M8 2v8M5 7l3 3 3-3" />
               <path d="M2 12v1a1 1 0 001 1h10a1 1 0 001-1v-1" />
             </svg>
-            Import bookmarks and contacts
+            Import
           </button>
           <input type="file" id="import-file" accept=".html,.json" hidden />
           <button
@@ -87,6 +105,20 @@
             </svg>
             Add contact
           </button>
+          <button class="btn-primary" id="add-btn">
+            <span class="btn-icon">+</span> Add company
+          </button>
+          <button
+            class="btn-ghost btn-linkedin"
+            id="linkedin-btn"
+            title="Open your LinkedIn profile"
+          >
+            <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
+              <path
+                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+              />
+            </svg>
+          </button>
           <a
             class="btn-ghost btn-market"
             href="https://karpathy.ai/jobs/"
@@ -107,20 +139,6 @@
             </svg>
             Market pulse
           </a>
-          <button
-            class="btn-ghost btn-linkedin"
-            id="linkedin-btn"
-            title="Open your LinkedIn profile"
-          >
-            <svg viewBox="0 0 16 16" width="13" height="13" fill="currentColor">
-              <path
-                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-              />
-            </svg>
-          </button>
-          <button class="btn-primary" id="add-btn">
-            <span class="btn-icon">+</span> Add company
-          </button>
         </div>
       </div>
     </header>
@@ -128,6 +146,20 @@
     <!-- ── Mobile Menu (hidden on desktop) ── -->
     <div class="mobile-menu" id="mobile-menu">
       <div class="mobile-menu-content">
+        <button class="mobile-menu-item" id="mobile-guide-btn">
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+            width="16"
+            height="16"
+          >
+            <circle cx="8" cy="8" r="7" />
+            <path d="M8 5v4M8 12h.01" />
+          </svg>
+          How to use
+        </button>
         <button class="mobile-menu-item" id="mobile-import-btn">
           <svg
             viewBox="0 0 16 16"
@@ -170,6 +202,23 @@
           </svg>
           Add contact
         </button>
+        <button
+          class="mobile-menu-item mobile-menu-add-company"
+          id="mobile-add-btn"
+        >
+          <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16">
+            <path d="M8 3v5H3v1h5v5h1v-5h5v-1h-5V3z" />
+          </svg>
+          Add company
+        </button>
+        <button class="mobile-menu-item" id="mobile-linkedin-btn">
+          <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
+            <path
+              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
+            />
+          </svg>
+          LinkedIn
+        </button>
         <a
           class="mobile-menu-item"
           href="https://karpathy.ai/jobs/"
@@ -190,23 +239,6 @@
           </svg>
           Market pulse
         </a>
-        <button class="mobile-menu-item" id="mobile-linkedin-btn">
-          <svg viewBox="0 0 16 16" width="16" height="16" fill="currentColor">
-            <path
-              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-            />
-          </svg>
-          LinkedIn
-        </button>
-        <button
-          class="mobile-menu-item mobile-menu-add-company"
-          id="mobile-add-btn"
-        >
-          <svg viewBox="0 0 16 16" fill="currentColor" width="16" height="16">
-            <path d="M8 3v5H3v1h5v5h1v-5h5v-1h-5V3z" />
-          </svg>
-          Add company
-        </button>
       </div>
     </div>
 
@@ -500,6 +532,201 @@
           <button class="btn-ghost" id="linkedin-modal-cancel">Cancel</button>
           <button class="btn-primary" id="linkedin-modal-save">
             Save &amp; Open
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Guide Modal ── -->
+    <div class="modal-overlay" id="guide-overlay" hidden>
+      <div
+        class="modal modal--lg"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="guide-modal-title"
+      >
+        <div class="modal-header">
+          <h2 id="guide-modal-title">How to Use Career Hub</h2>
+          <button class="modal-close" id="guide-modal-close" aria-label="Close">
+            ✕
+          </button>
+        </div>
+        <div class="modal-body guide-body">
+          <h3>What is Career Hub?</h3>
+          <p>
+            Career Hub is your personal job hunt dashboard. It helps you track
+            companies you're interested in, save customized bookmarks with
+            filters applied, manage contacts, and monitor your daily outreach
+            progress.
+          </p>
+
+          <h3>Core Features</h3>
+
+          <div class="guide-section">
+            <h4>
+              <strong>1. Add & Track Companies</strong>
+            </h4>
+            <p>
+              Click "<strong>Add company</strong>" to save any company you're
+              interested in. Add a name, URL, tag (e.g., "Tech", "Startup"), and
+              optional notes. All data is saved locally in your browser.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>2. Customized Bookmarks (The Main Idea)</strong>
+            </h4>
+            <p>
+              The key feature: Save company pages with filters already applied.
+              For example, if you find a job listing page with filters for
+              "Remote" and "Senior" roles, save that link. Next time you visit,
+              those filters are already set — no need to reapply them.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>3. Daily Visit Tracking</strong>
+            </h4>
+            <p>
+              Click on a company card to visit its URL. Each visit is recorded
+              for today. The "<strong>Today</strong>" counter at the top shows
+              how many companies you visited today vs. your total companies.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>4. Search & Filter</strong>
+            </h4>
+            <p>
+              Use the search bar to find companies by name or notes. Click tags
+              to filter by category. Use "<strong>All</strong>" to reset
+              filters.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>5. Manage Contacts</strong>
+            </h4>
+            <p>
+              Click "<strong>Add contact</strong>" to save recruiters, hiring
+              managers, or referrals. Assign them to companies, add email,
+              phone, LinkedIn, and notes. Click a company to view all contacts
+              for that company.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>6. Visit History</strong>
+            </h4>
+            <p>
+              Click the calendar button to see your visit history across months
+              and years. Plan your outreach and stay consistent with your job
+              hunt.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>7. Personalization</strong>
+            </h4>
+            <p>
+              Click the "<strong>Career Hub</strong>" title to add your name.
+              This appears at the top and makes the dashboard feel more
+              personal.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>8. LinkedIn Integration</strong>
+            </h4>
+            <p>
+              Click the LinkedIn logo (top right) to save your LinkedIn profile
+              URL. Click it again anytime to quickly open your profile.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>9. Export & Backup</strong>
+            </h4>
+            <p>
+              Click "<strong>Export</strong>" to download all your data
+              (companies, contacts, name, LinkedIn URL) as a JSON file. Keep
+              this safe for backups or migrating to another device.
+            </p>
+          </div>
+
+          <div class="guide-section">
+            <h4>
+              <strong>10. Import Data</strong>
+            </h4>
+            <p>
+              Click "<strong>Import</strong>" to:
+              <br />• Upload Chrome/Edge bookmarks (HTML file) to add multiple
+              companies at once <br />• Upload a previous backup (JSON file) to
+              restore your data
+            </p>
+          </div>
+
+          <h3>⚠️ Important Cautions</h3>
+
+          <div class="guide-section caution">
+            <p>
+              <strong>🔒 Data Storage:</strong> Everything is stored locally in
+              your browser. If you clear your browser cookies or site data, you
+              will lose all data. Always export and backup regularly.
+            </p>
+          </div>
+
+          <div class="guide-section caution">
+            <p>
+              <strong>📱 Device-Specific:</strong> Your data is not synced
+              across devices. If you use Career Hub on multiple devices, export
+              from one and import on another to keep data in sync.
+            </p>
+          </div>
+
+          <div class="guide-section caution">
+            <p>
+              <strong>🕐 Timezone:</strong> All dates and times follow your
+              system's local timezone. Make sure your device timezone is set
+              correctly.
+            </p>
+          </div>
+
+          <div class="guide-section caution">
+            <p>
+              <strong>🚀 No Backend:</strong> Career Hub is completely offline
+              and private. No data is sent to any server. You have 100% privacy.
+            </p>
+          </div>
+
+          <h3>Quick Tips</h3>
+          <ul style="margin-left: 16px; margin-top: 8px">
+            <li>Visit at least 1 company per day to build momentum</li>
+            <li>Use tags to organize by industry, company size, or stage</li>
+            <li>Add detailed notes for follow-up reminders</li>
+            <li>Export your data weekly as a backup habit</li>
+            <li>
+              On mobile, use the hamburger menu (☰) to access all buttons
+            </li>
+          </ul>
+
+          <h3 style="margin-top: 20px">Ready to go!</h3>
+          <p>
+            You have sample data loaded to explore. Delete it and add your own
+            companies. Good luck with your job hunt! 🚀
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-primary" id="guide-modal-close-btn">
+            Got it!
           </button>
         </div>
       </div>

@@ -1243,6 +1243,15 @@ function saveLinkedIn() {
   window.open(val, "_blank", "noopener");
 }
 
+/* ── Guide Modal ── */
+function openGuide() {
+  document.getElementById("guide-overlay").hidden = false;
+}
+
+function closeGuide() {
+  document.getElementById("guide-overlay").hidden = true;
+}
+
 document.getElementById("linkedin-btn").addEventListener("click", openLinkedIn);
 document
   .getElementById("linkedin-modal-close")
@@ -1262,6 +1271,22 @@ document
 document.getElementById("linkedin-btn").addEventListener("contextmenu", (e) => {
   e.preventDefault();
   showLinkedInModal(localStorage.getItem(LINKEDIN_KEY) || "");
+});
+
+// Guide modal handlers
+document.getElementById("guide-btn").addEventListener("click", openGuide);
+document.getElementById("mobile-guide-btn").addEventListener("click", () => {
+  openGuide();
+  closeMobileMenu();
+});
+document
+  .getElementById("guide-modal-close")
+  .addEventListener("click", closeGuide);
+document
+  .getElementById("guide-modal-close-btn")
+  .addEventListener("click", closeGuide);
+document.getElementById("guide-overlay").addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) closeGuide();
 });
 
 /* ── Personalized title ── */

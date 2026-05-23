@@ -63,8 +63,9 @@ body {
 .site-header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  gap: 12px;
+  padding-left: 8px;
+  padding-right: 32px;
 }
 
 .header-left {
@@ -124,6 +125,7 @@ body {
   gap: 12px;
   flex-wrap: nowrap;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 /* ── Import toast ── */
@@ -658,6 +660,65 @@ main.container {
 
 .modal--sm {
   max-width: 340px;
+}
+
+.modal--lg {
+  max-width: 620px;
+}
+
+/* ── Guide Modal ── */
+.guide-body {
+  max-height: 70vh;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.guide-body h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.guide-body h4 {
+  font-size: 13px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--text);
+}
+
+.guide-body p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 8px 0;
+}
+
+.guide-body ul {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  padding-left: 20px;
+}
+
+.guide-body li {
+  margin-bottom: 6px;
+}
+
+.guide-section {
+  margin-bottom: 12px;
+}
+
+.guide-section.caution {
+  padding: 12px;
+  background: var(--surface-2);
+  border-left: 3px solid var(--danger);
+  border-radius: var(--radius-sm);
+}
+
+.guide-section.caution p {
+  margin: 0;
 }
 
 @keyframes modal-in {
@@ -1224,6 +1285,8 @@ main.container {
 
   .site-header .container {
     gap: 12px;
+    padding-left: 12px;
+    padding-right: 16px;
   }
 
   .logo-mark {
@@ -1341,6 +1404,28 @@ main.container {
     font-size: 16px;
   }
 
+  .modal--lg {
+    max-width: 90vw;
+  }
+
+  .guide-body {
+    max-height: 60vh;
+  }
+
+  .guide-body h3 {
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .guide-body h4 {
+    font-size: 12px;
+  }
+
+  .guide-body p,
+  .guide-body ul {
+    font-size: 12px;
+  }
+
   /* Form */
   .field-group {
     margin-bottom: 12px;
@@ -1411,6 +1496,8 @@ main.container {
     gap: 8px;
     flex-wrap: nowrap;
     overflow-x: auto;
+    padding-left: 8px;
+    padding-right: 12px;
   }
 
   .header-left {
@@ -1556,6 +1643,39 @@ main.container {
 
   .modal-header h2 {
     font-size: 14px;
+  }
+
+  .modal--lg {
+    max-width: 100%;
+  }
+
+  .guide-body {
+    max-height: 65vh;
+    padding-right: 4px;
+  }
+
+  .guide-body h3 {
+    font-size: 13px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  .guide-body h4 {
+    font-size: 11px;
+  }
+
+  .guide-body p,
+  .guide-body ul {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .guide-section {
+    margin-bottom: 10px;
+  }
+
+  .guide-section.caution {
+    padding: 10px;
   }
 
   .modal-close {
