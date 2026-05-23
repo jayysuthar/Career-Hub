@@ -32,7 +32,7 @@ Job hunting is chaotic. You have 30+ companies to check, you can't remember whic
 - Add any company with a name, career page URL, tag (e.g. Fintech, AI, Health), and a personal note
 - Edit or remove companies at any time
 - Drag and drop tiles to reorder companies however makes sense to you
-- Import companies from Chrome bookmarks (HTML) or from a previous backup (JSON)
+- Import companies from bookmarks (HTML) or from a previous backup (JSON)
 - Export all your companies and contacts as a JSON file to back up your data or transfer to another device
 
 ### Daily Visit Tracking
