@@ -325,6 +325,7 @@ body {
 main.container {
   padding-top: 24px;
   padding-bottom: 48px;
+  min-height: 500px;
 }
 
 .results-count {
@@ -1790,4 +1791,36 @@ main.container {
     padding: 3px 8px;
     font-size: 10px;
   }
+}
+/* ── Footer ── */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  text-align: center;
+  padding: 24px 0 32px;
+  font-size: 12px;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border);
+  margin-top: 24px;
+}
+
+.footer-heart {
+  color: #ef4444;
+}
+
+.footer-dot {
+  color: var(--border-strong);
+}
+
+.footer-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.footer-link:hover {
+  color: var(--text);
 }
