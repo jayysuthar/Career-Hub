@@ -126,17 +126,6 @@ body {
   flex-shrink: 0;
 }
 
-/* ── LinkedIn button ── */
-.btn-linkedin {
-  padding: 9px 16px;
-  background: #0a66c2;
-  color: #fff;
-  border: none;
-}
-.btn-linkedin:hover {
-  background: #004182;
-}
-
 /* ── Import toast ── */
 .import-toast {
   position: fixed;
@@ -467,8 +456,10 @@ main.container {
 .btn-primary {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 9px 16px;
+  height: 36px;
+  padding: 0 16px;
   background: var(--text);
   color: #fff;
   border: none;
@@ -476,6 +467,7 @@ main.container {
   font-family: inherit;
   font-size: 13px;
   font-weight: 500;
+  line-height: 1;
   cursor: pointer;
   transition: background 0.12s;
   white-space: nowrap;
@@ -500,14 +492,17 @@ main.container {
 .btn-ghost {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 6px;
-  padding: 9px 16px;
+  height: 36px;
+  padding: 0 16px;
   background: transparent;
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
   font-family: inherit;
   font-size: 13px;
   color: var(--text-secondary);
+  line-height: 1;
   cursor: pointer;
   transition: all 0.12s;
 }
@@ -515,6 +510,26 @@ main.container {
 .btn-ghost:hover {
   border-color: var(--border-strong);
   color: var(--text);
+}
+
+/* ── Market pulse button ── */
+.btn-ghost.btn-market {
+  text-decoration: none;
+}
+
+.btn-ghost.btn-market:hover {
+  text-decoration: none;
+}
+
+/* ── LinkedIn button override ── */
+.btn-ghost.btn-linkedin {
+  background: #0a66c2;
+  color: #fff;
+  border: none;
+}
+
+.btn-ghost.btn-linkedin:hover {
+  background: #004182;
 }
 
 .btn-danger {
