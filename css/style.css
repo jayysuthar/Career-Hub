@@ -128,12 +128,13 @@ body {
 
 /* ── LinkedIn button ── */
 .btn-linkedin {
-  color: #5ba4f5;
-  border-color: #5ba4f5;
+  padding: 9px 16px;
+  background: #0a66c2;
+  color: #fff;
+  border: none;
 }
 .btn-linkedin:hover {
-  background: rgba(91, 164, 245, 0.1);
-  border-color: #5ba4f5;
+  background: #004182;
 }
 
 /* ── Import toast ── */
