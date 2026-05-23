@@ -1315,6 +1315,60 @@ function startTitleEdit() {
 
 document.getElementById("site-title").addEventListener("click", startTitleEdit);
 
+/* ── Mobile Menu ── */
+function closeMobileMenu() {
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.querySelector(".mobile-menu");
+  if (mobileMenu && overlay) {
+    mobileMenu.classList.remove("active");
+  }
+}
+
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById("mobile-menu");
+  if (mobileMenu) {
+    mobileMenu.classList.toggle("active");
+  }
+}
+
+// Hamburger button
+document
+  .getElementById("hamburger-btn")
+  .addEventListener("click", toggleMobileMenu);
+
+// Close menu when clicking overlay
+document.getElementById("mobile-menu").addEventListener("click", (e) => {
+  if (e.target === e.currentTarget) closeMobileMenu();
+});
+
+// Mobile menu buttons - wire to desktop functions
+document.getElementById("mobile-import-btn").addEventListener("click", () => {
+  document.getElementById("import-file").click();
+  closeMobileMenu();
+});
+
+document.getElementById("mobile-export-btn").addEventListener("click", () => {
+  exportAllData();
+  closeMobileMenu();
+});
+
+document
+  .getElementById("mobile-add-email-btn")
+  .addEventListener("click", () => {
+    document.getElementById("add-email-btn").click();
+    closeMobileMenu();
+  });
+
+document.getElementById("mobile-linkedin-btn").addEventListener("click", () => {
+  document.getElementById("linkedin-btn").click();
+  closeMobileMenu();
+});
+
+document.getElementById("mobile-add-btn").addEventListener("click", () => {
+  document.getElementById("add-btn").click();
+  closeMobileMenu();
+});
+
 /* ── Sticky offset ── */
 function syncToolbarTop() {
   const h = document.querySelector(".site-header")?.offsetHeight || 0;

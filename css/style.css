@@ -146,6 +146,90 @@ body {
   background: var(--danger);
 }
 
+/* ── Hamburger Menu Button ── */
+.hamburger-menu {
+  display: none;
+  width: 36px;
+  height: 36px;
+  padding: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.12s;
+  flex-shrink: 0;
+}
+
+.hamburger-menu:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+/* ── Mobile Menu ── */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 400;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu-content {
+  position: fixed;
+  top: var(--header-h, 60px);
+  right: 0;
+  width: 100%;
+  max-width: 280px;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  max-height: calc(100vh - var(--header-h, 60px));
+  overflow-y: auto;
+  z-index: 401;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.12s;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.mobile-menu-item:hover {
+  background: rgba(232, 230, 225, 0.05);
+  color: var(--text);
+}
+
+.mobile-menu-item svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.mobile-menu-add-company {
+  color: var(--text);
+  font-weight: 500;
+  border-bottom: none;
+}
+
 /* ── Toolbar ── */
 .toolbar {
   background: var(--surface);
@@ -1112,20 +1196,473 @@ main.container {
 }
 
 /* ── Responsive ── */
-@media (max-width: 640px) {
+
+/* Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
   .container {
-    padding: 0 14px;
+    padding: 0 24px;
   }
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+/* Tablets & Small laptops (max-width: 768px) */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* Header */
+  .site-header {
+    padding: 14px 0;
+  }
+
+  .site-header .container {
+    gap: 12px;
+  }
+
+  .logo-mark {
+    font-size: 22px;
+  }
+
+  .site-header h1 {
+    font-size: 16px;
+  }
+
   .site-header .subtitle {
     display: none;
   }
+
+  .header-actions {
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Buttons */
+  .btn-ghost,
+  .btn-primary {
+    height: 32px;
+    padding: 0 12px;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .btn-icon {
+    font-size: 16px;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    padding: 10px 0;
+  }
+
   .toolbar .container {
     gap: 8px;
+    flex-wrap: wrap;
   }
+
   .search-wrap {
+    min-width: 120px;
     max-width: 100%;
+    flex: 1 1 100%;
+    order: -1;
   }
+
+  .filter-tags {
+    gap: 4px;
+  }
+
+  .tag-pill {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  /* Grid */
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+  }
+
+  main.container {
+    padding-top: 16px;
+    padding-bottom: 32px;
+  }
+
+  /* Card */
+  .card {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .card-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+
+  .card-name {
+    font-size: 13px;
+  }
+
+  .card-tag {
+    font-size: 10px;
+    padding: 0 6px;
+  }
+
+  .card-note {
+    font-size: 11px;
+    -webkit-line-clamp: 1;
+  }
+
+  .card-url {
+    font-size: 9px;
+  }
+
+  .btn-open {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  /* Modal */
+  .modal-content {
+    max-width: 90vw;
+    margin: 16px;
+  }
+
+  .modal-header h2 {
+    font-size: 16px;
+  }
+
+  /* Form */
+  .field-group {
+    margin-bottom: 12px;
+  }
+
+  .field-label {
+    font-size: 12px;
+    margin-bottom: 4px;
+  }
+
+  .field-input,
+  .field-textarea,
+  .field-select {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  /* Daily progress */
+  .dp-wrap {
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  .dp-label {
+    font-size: 11px;
+  }
+
+  .dp-count {
+    font-size: 12px;
+  }
+
+  /* History calendar */
+  .cal-container {
+    max-width: 85vw;
+  }
+
+  .cal-header h3 {
+    font-size: 14px;
+  }
+
+  .cal-grid {
+    gap: 4px;
+  }
+
+  .cal-cell {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 12px;
+  }
+
+  /* Header */
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .site-header .container {
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .header-left {
+    flex-shrink: 0;
+  }
+
+  .logo-mark {
+    font-size: 20px;
+  }
+
+  .site-header h1 {
+    font-size: 14px;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header-actions {
+    display: none;
+  }
+
+  /* Buttons */
+  .btn-ghost,
+  .btn-primary {
+    height: 38px;
+    padding: 0 10px;
+    font-size: 11px;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+
+  .btn-ghost svg,
+  .btn-primary svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .btn-icon {
+    font-size: 14px;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    padding: 8px 0;
+  }
+
+  .toolbar .container {
+    gap: 6px;
+  }
+
+  .search-wrap {
+    min-width: 100px;
+  }
+
+  .search-wrap input {
+    padding: 8px 10px 8px 30px;
+    font-size: 12px;
+  }
+
+  .search-icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .filter-tags {
+    gap: 3px;
+  }
+
+  .tag-pill {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  /* Grid */
   .grid {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  main.container {
+    padding-top: 12px;
+    padding-bottom: 24px;
+  }
+
+  /* Card */
+  .card {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .card-top {
+    gap: 10px;
+  }
+
+  .card-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .card-name {
+    font-size: 12px;
+  }
+
+  .card-tag {
+    font-size: 9px;
+    padding: 0 5px;
+  }
+
+  .card-note {
+    font-size: 10px;
+    -webkit-line-clamp: 1;
+  }
+
+  .card-url {
+    font-size: 8px;
+  }
+
+  .btn-open {
+    padding: 6px 8px;
+    font-size: 11px;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 0;
+  }
+
+  .modal-content {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+
+  .modal-header {
+    padding: 12px 12px;
+  }
+
+  .modal-header h2 {
+    font-size: 14px;
+  }
+
+  .modal-close {
+    width: 24px;
+    height: 24px;
+  }
+
+  .modal-body {
+    padding: 12px;
+  }
+
+  /* Form */
+  .field-group {
+    margin-bottom: 10px;
+  }
+
+  .field-label {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .field-input,
+  .field-textarea,
+  .field-select {
+    font-size: 16px;
+    padding: 10px 8px;
+  }
+
+  .field-textarea {
+    min-height: 80px;
+  }
+
+  /* Results count */
+  .results-count {
+    font-size: 11px;
+    margin-bottom: 10px;
+  }
+
+  /* Daily progress */
+  .dp-wrap {
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .dp-stat {
+    min-width: 50px;
+  }
+
+  .dp-label {
+    font-size: 10px;
+  }
+
+  .dp-count {
+    font-size: 11px;
+  }
+
+  /* History calendar */
+  .cal-container {
+    max-width: 100%;
+    max-height: 70vh;
+    padding: 10px;
+  }
+
+  .cal-header h3 {
+    font-size: 12px;
+  }
+
+  .cal-grid {
+    gap: 3px;
+  }
+
+  .cal-cell {
+    width: 28px;
+    height: 28px;
+    font-size: 10px;
+  }
+
+  /* Contact list in modal */
+  .contact-item {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .ct-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .ct-name {
+    font-size: 12px;
+  }
+
+  .ct-role {
+    font-size: 10px;
+  }
+
+  .ct-details {
+    gap: 4px;
+  }
+
+  .ct-link {
+    font-size: 10px;
+  }
+
+  .ct-linkedin-btn {
+    padding: 3px 8px;
+    font-size: 10px;
   }
 }
