@@ -109,6 +109,7 @@ Every session is completely private. Your data never leaves your device and is n
 - HTML, CSS, JavaScript — no frameworks, no build step
 - `localStorage` for all data persistence
 - Hosted on GitHub Pages with a custom domain
+- US Job Market Pulse powered by [Andrej Karpathy's](https://karpathy.ai) job market visualizer
 
 ---
 
