@@ -492,6 +492,8 @@ function seedDefaults() {
   if (!localStorage.getItem(NAME_KEY)) {
     localStorage.setItem(NAME_KEY, "Your Name");
   }
+
+  localStorage.setItem("career_hub_is_sample", "true");
 }
 
 /* ── Helpers ── */
@@ -896,6 +898,13 @@ function executeDelete() {
 
 /* ── Bookmark import ── */
 function importFromBookmarkHTML(htmlText) {
+  // Clear sample data on first import
+  if (localStorage.getItem("career_hub_is_sample") === "true") {
+    companies = [];
+    emails = [];
+    localStorage.removeItem("career_hub_is_sample");
+  }
+
   // Chrome exports Netscape Bookmark Format — the DOM parser mangles its
   // non-standard <DL><p> structure, so parse the raw text instead.
 
@@ -954,6 +963,13 @@ function importFromBookmarkHTML(htmlText) {
 }
 
 function importFromJSON(jsonText) {
+  // Clear sample data on first import
+  if (localStorage.getItem("career_hub_is_sample") === "true") {
+    companies = [];
+    emails = [];
+    localStorage.removeItem("career_hub_is_sample");
+  }
+
   try {
     const data = JSON.parse(jsonText);
     let importedCompanies = 0;
