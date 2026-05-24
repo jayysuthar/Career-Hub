@@ -21,7 +21,7 @@ No sign-up. No server. No tracking. Just you and your job search.
 - Add any company with a name, career page URL, tag, and personal note
 - Edit, remove, or drag and drop to reorder companies
 - Import from Chrome/Edge bookmarks (HTML) or a previous backup (JSON)
-- Export all data as JSON for backup or device transfer
+- Export all data as JSON (companies, contacts, visit history, name, LinkedIn URL) for backup or device transfer
 
 ### 📅 Daily Visit Tracking
 

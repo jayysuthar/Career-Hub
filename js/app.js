@@ -1034,6 +1034,12 @@ function importFromJSON(jsonText) {
       localStorage.setItem(LINKEDIN_KEY, data.linkedInUrl);
     }
 
+    // Import visits (calendar data) if present
+    if (data.visits && typeof data.visits === "object") {
+      visits = data.visits;
+      saveVisits();
+    }
+
     if (importedCompanies > 0 || importedContacts > 0) {
       save();
       saveEmails();
@@ -1074,6 +1080,7 @@ function exportAllData() {
         companyName: company?.name || "",
       };
     }),
+    visits: visits,
   };
 
   const jsonString = JSON.stringify(data, null, 2);
