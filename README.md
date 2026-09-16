@@ -79,7 +79,7 @@ No sign-up. No server. No tracking. Just you and your job search.
 
 ## How to Use It
 
-1. **Get started** — Visit [careerhub.lol](https://careerhub.lol) — no sign-up needed
+1. **Get started** — Visit repo — no sign-up needed
 2. **Add companies** — Add manually or import your existing bookmarks
 3. **Save customized links** — Bookmark career pages with filters already applied
 4. **Track daily progress** — Mark companies as visited each day
